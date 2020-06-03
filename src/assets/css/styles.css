@@ -84,14 +84,34 @@ body {
     margin-right: 15px;
 }
 
-#menu a {
+#menu a{
     text-decoration: none;
     color: #444;
     transition: 300ms all;
 }
 
-#menu a:hover {
-    color: #f13e3e;
+#menu a:hover,
+.active{
+    color: #f13e3e !important;
+    font-weight: bold;
+}
+
+.yearGreen{
+    padding: 5px !important;
+    border: 2px solid red !important;
+    display: block;  
+    clear: both;
+    width: 118px;
+    text-align: center;
+}
+
+.yearRed{
+    padding: 5px !important;
+    border: 2px solid green !important;  
+    display: block;
+    clear: both;
+    width: 118px; 
+    text-align: center;
 }
 
 #slider {

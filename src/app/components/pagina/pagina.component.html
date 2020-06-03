@@ -1,0 +1,10 @@
+<h1 class="subheader">Pagina de prueba</h1>
+
+<div *ngIf="nombre && apellidos; then siHayParametros else noHayParametros"></div>
+<ng-template #siHayParametros>
+    <h2>Binvenido {{nombre}}  {{apellidos}}</h2>>
+</ng-template>
+<ng-template #noHayParametros>
+    <h2>No hay params por la url</h2>
+</ng-template>
+<button (click)='redireccion()'>Traeme los params!!!</button>
