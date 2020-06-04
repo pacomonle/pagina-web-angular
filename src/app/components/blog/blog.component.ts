@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-
-  constructor() { }
+  public homeText= 'Bienvenido al Curso de Angular con Francisco Monleon'
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }

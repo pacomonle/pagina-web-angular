@@ -1,31 +1,33 @@
-<h1 class="subheader">Peliculas</h1>
-<hr />
-<h2>{{ titulo }}</h2>
-<button (click)="cambiarTitulo()">pulsame</button>
+<app-slider [nombre]="'Peliculas'" [size]="'small'"></app-slider>
+<div class="center">
+  <section id="content">
+    <h1 class="subheader">Peliculas</h1>
+    <button (click)="cambiarTitulo()">pulsame</button>
 <hr />
 <h2>Mostrar primera pelicula</h2>
 {{ peliculas[0].title }}
 <hr />
+<div *ngIf="miFavorita">
+
+<h1>{{ favorita.title | uppercase }}</h1>
+<p>{{ favorita.year | date: 'short' }}</p>
+<p>{{ fecha | date: 'dd/MM/yyyy' }}</p>
+<p>{{ favorita.year | espar }}</p>
+</div>
 <div *ngIf="peliculas.length > 0">
   <span>Catalogo de peliculas</span>
 </div>
 <h5>Numero de peliculas: {{ peliculas.length }}</h5>
 <h2 class="subheader">Listado Peliculas</h2>
 <div id="articles" *ngIf="peliculas">
-  <article class="article-item" *ngFor="let pelicula of peliculas; let i = index">
-    <div class="image-wrap">
-      <img [src]="pelicula.image" [alt]="pelicula.title" />
-    </div>
-
-    <h2>{{i+1}} - {{ pelicula.title }}</h2>
-    <span [class.yearRed]='pelicula.year > 2019'
-          [class.yearGreen]='pelicula.year <= 2019'
-          [style.background]="pelicula.year > 2019 ? 'red' : 'blue'" 
-          style='color: white'>
-        {{pelicula.year}}
-    </span>
-    <a href="#">Leer más</a>
-
-    <div class="clearfix"></div>
-  </article>
+  <div *ngFor="let pelicula of peliculas; let i = index"> 
+     <app-pelicula [pelicula]="pelicula" (marcarFavorita)='mostrarFavorita($event)' ></app-pelicula>
 </div>
+</div>
+
+  </section>
+  <app-sidebar></app-sidebar>
+</div>
+
+
+

@@ -1,29 +1,32 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
-
+import { Pelicula } from "../../models/pelicula/pelicula";
+import { PeliculasService } from "../../services/peliculas/peliculas.service";
 @Component({
   selector: 'peliculas',
   templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css']
+  styleUrls: ['./peliculas.component.css'],
+  providers: [PeliculasService]
 })
 export class PeliculasComponent implements OnInit {
- public peliculas: Array<any>
-  public titulo: string
+public peliculas: Pelicula[];
+public titulo: string;
+public favorita : Pelicula;
+public miFavorita: string;
+public fecha: any;
 
-  constructor() { 
+  constructor(
+    private _peliculasService: PeliculasService
+  ) { 
     console.log('constructor lanzado')
     this.titulo = 'componente peliculas'
-    this.peliculas= [
-      {year: 2019, title: 'Spiderman 4', image: 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2013/03/213474-sam-raimi-explica-cancelacion-spiderman-4.jpg?itok=ZjuIXQVq'},
-      {year:2018, title: 'Los vengadores', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZSRp2IR6FXQNeoEvKZdz_e82i9A_eeyOhveqDChDZoySiih09&usqp=CAU'},
-      {year:2020, title: 'Batman', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5deNOS7wazwWj8kZhfYYMYHEK4fM7QPJ2jV6Fx5kjBWAbEYVA&usqp=CAU'},
-    ]
+    this.peliculas= this._peliculasService.getPeliculas()
+    this.fecha = new Date(2020, 8, 12);
     
-
-
   }
 
   ngOnInit(): void {
       console.log('this.peliculas')
+      console.log(this._peliculasService.holaMundo())
   }
 
   DoCheck(){
@@ -40,6 +43,17 @@ export class PeliculasComponent implements OnInit {
 cambiarTitulo(){
   this.titulo = 'El titulo ha sido cambiado!!!!'
 }
+
+
+mostrarFavorita(event){
+  
+  //console.log(event.pelicula.title)
+this.favorita = event.pelicula
+this.miFavorita = event.pelicula.title
+console.log(this.miFavorita, this.favorita)
+
+}
+
 
 
 }
