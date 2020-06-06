@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 // router
 import { routing, appRoutingProviders } from "./app.routing";
+// Http client
+import { HttpClientModule } from "@angular/common/http";
+
 
 import { AppComponent } from './app.component';
 import {Micomponente} from './components/mi-componente/mi-componente.component';
@@ -42,7 +45,8 @@ import { EsParPipe } from "./pipes/espar.pipe";
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
