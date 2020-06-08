@@ -3,6 +3,14 @@
     Cargando....
 
 </div>
+
+<div class="loading" *ngIf="articles.length === 0" >
+
+  <h2 class="subheader">Tu busqueda no tiene resultados, intentalo con otra :)</h2>
+
+
+</div>
+
 <div id="articles" *ngIf="articles">
     <article
       class="article-item"

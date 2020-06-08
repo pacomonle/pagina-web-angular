@@ -8,6 +8,8 @@ import { routing, appRoutingProviders } from "./app.routing";
 import { HttpClientModule } from "@angular/common/http";
 // libreria moment
 import {MomentModule} from 'angular2-moment'
+// LIBRERIA UPLOADER
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 
 import { AppComponent } from './app.component';
@@ -28,6 +30,9 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { EsParPipe } from "./pipes/espar.pipe";
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
+import { SearchComponent } from './components/search/search.component';
+import { ArticleNewComponent } from './components/article-new/article-new.component';
+import { ArticleEditComponent } from './components/article-edit/article-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,14 +51,18 @@ import { ArticleComponent } from './components/article/article.component';
     PeliculaComponent,
     EsParPipe,
     ArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    SearchComponent,
+    ArticleNewComponent,
+    ArticleEditComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    AngularFileUploaderModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
