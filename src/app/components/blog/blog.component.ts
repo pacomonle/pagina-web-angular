@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from "../../services/article/article.service";
-import { Article } from "../../models/article/article";;
+import { Article } from "../../models/article/article";
 import Global from "../../services/global";
 
 @Component({

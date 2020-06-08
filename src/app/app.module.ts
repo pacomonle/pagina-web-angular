@@ -6,6 +6,8 @@ import {FormsModule} from '@angular/forms'
 import { routing, appRoutingProviders } from "./app.routing";
 // Http client
 import { HttpClientModule } from "@angular/common/http";
+// libreria moment
+import {MomentModule} from 'angular2-moment'
 
 
 import { AppComponent } from './app.component';
@@ -24,6 +26,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 import { EsParPipe } from "./pipes/espar.pipe";
+import { ArticlesComponent } from './components/articles/articles.component';
+import { ArticleComponent } from './components/article/article.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,13 +44,16 @@ import { EsParPipe } from "./pipes/espar.pipe";
     PaginaComponent,
     ErrorComponent,
     PeliculaComponent,
-    EsParPipe
+    EsParPipe,
+    ArticlesComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

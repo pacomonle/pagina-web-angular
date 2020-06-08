@@ -162,6 +162,29 @@ body {
     color: white;
 }
 
+.btn-danger{
+    background-color: #f13e3e !important;
+    color: white !important;
+    text-decoration: none;
+
+}
+
+.btn-warning{
+    background-color: orange !important;
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-danger:hover,
+.btn-warning:hover{
+    opacity: 0.7;
+    transition: all 600ms;
+}
+
+.buttons{
+    margin-top: 10px;
+}
+
 #slider.slider-small {
     height: 150px;
 }
@@ -217,6 +240,7 @@ body {
     transition: 300ms all;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn-success {
